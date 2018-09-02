@@ -119,22 +119,10 @@ var GAME = {
   //动画循环
   animate: function () { 
     var self = this;
-    this.updateElement();    //更新元素
-    ctx.clearRect(0, 0, canvasWidth, canvasHeight);  //清理画布 
-    this.draw();//绘制画布
-
-    requestAnimationFrame(function () {     //不断循环animate
-      if(self.status === 'stop'){
-        return;
-      }else{
-        self.animate();
-      }
-    });
-  },
-  updateElement:function(){
     var opts = this.opts;
     var enemies = this.enemies;
-
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);  //清理画布 
+    this.draw();//绘制画布
      if (enemies.length === 0) {
       if (opts.level === opts.totalLevel) {
         this.end('all-success'); //通版
@@ -148,8 +136,16 @@ var GAME = {
       this.end('failed');
       return;
     }
+    //更新元素
+    requestAnimationFrame(function () {     //不断循环animate
+      if(self.status === 'stop'){
+        return;
+      }else{
+        self.animate();
+      }
+    });
 
-    
+
     //更新元素状态
     this.updatePanel();
     this.updateEnemeis();
