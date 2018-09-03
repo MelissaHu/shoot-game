@@ -136,14 +136,16 @@ var GAME = {
       this.end('failed');
       return;
     }
+
     //更新元素
-    requestAnimationFrame(function () {     //不断循环animate
+    requestAnimFrame(function () {     //不断循环animate
       if(self.status === 'stop'){
         return;
       }else{
         self.animate();
       }
     });
+
 
 
     //更新元素状态

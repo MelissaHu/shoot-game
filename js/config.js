@@ -16,7 +16,7 @@ var CONFIG = {
   enemyIcon: './img/enemy.png', // 怪兽的图像
   enemyBoomIcon: './img/boom.png', // 怪兽死亡的图像
   enemyDirection: 'right', // 默认敌人一开始往右移动
-  planeSpeed: 5, // 默认飞机每一步移动的距离
+  planeSpeed: 10, // 默认飞机每一步移动的距离
   planeSize: {
     width: 60,
     height: 100
